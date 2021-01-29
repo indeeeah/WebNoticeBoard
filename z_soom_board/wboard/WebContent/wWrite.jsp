@@ -5,6 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판 글쓰기</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<style>
+body{
+background-color:beige;
+}
+div{
+margin-left:20px;
+margin-top:20px;
+}
+table>tbody{
+background-color:white;
+}
+</style>
 <script type="text/javascript">
 	function writefrm_submit(){
 		//document.getElementById("bwriter");
@@ -22,6 +35,7 @@
 	String bre_step = (request.getParameter("bre_step")!=null) ? request.getParameter("bre_step") : "0";
 	String bre_level = (request.getParameter("bre_level")!=null) ? request.getParameter("bre_level") : "0";
 %>
+<div>
 	<p>글쓰기</p>
 	<form enctype="multipart/form-data"	method="post" action="/wboard/boardInsert"	onsubmit="return writefrm_submit();">
 		<input type="text" name="bno" value="<%=bno%>">   <!-- 0은 새글, 그외 댓글인 경우는 읽고 있던 글의 bno를 넣어주기로 함. -->
@@ -48,10 +62,10 @@
 				<td>파일선택</td>
 				<td><input type="file" name ="bfilepath" id="bfilepath"></td>
 			</tr>
-			<tr>
-				<td>파일선택</td>
+			<!-- <tr>
+				<td>여러 파일선택</td>
 				<td><input type="file" name ="bfilepath" id="bfilepaths" multiple="multiple"></td>
-			</tr>
+			</tr> -->
 			<tr>
 				<td>비밀번호</td>
 				<td><input type="password" name ="bpwd"></td>
@@ -67,5 +81,6 @@
 
 
 	</form>
+	</div>
 </body>
 </html>

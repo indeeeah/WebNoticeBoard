@@ -8,6 +8,20 @@
 <head>
 <meta charset="UTF-8">
 <title>게시글 보기</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<style>
+body{
+background-color:beige;
+}
+div{
+margin-left:20px;
+margin-top:20px;
+}
+table>tbody{
+background-color:white;
+text-align:center;
+}
+</style>
 </head>
 <body>
 <% 
@@ -22,6 +36,7 @@ if(pageNum==null){
 	pageNum="1";
 }
 %>
+<div>
 	<p>글 보기</p>
 	<form method="post" action="wWrite.jsp">
 		<input type="hidden" name="bno" value="<%=bno%>">   <!-- 현재 보고 있는 글의 글 번호를 입력 -->
@@ -61,6 +76,6 @@ if(pageNum==null){
 			</tr>
 		</table>
 	</form>
-
+</div>
 </body>
 </html>

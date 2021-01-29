@@ -19,8 +19,20 @@ int endPage = (int)request.getAttribute("endPage");
 <head>
 <meta charset="UTF-8">
 <title>게시판 조회</title>
-
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<style>
+body{
+background-color:beige;
+}
+div{
+margin-left:20px;
+margin-top:20px;
+}
+table>tbody{
+background-color:white;
+text-align:center;
+}
+</style>
 </head>
 <body>
 	<div>
