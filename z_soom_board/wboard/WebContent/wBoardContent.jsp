@@ -15,6 +15,7 @@ background-color:beige;
 }
 div{
 margin-left:20px;
+margin-right:20px;
 margin-top:20px;
 }
 table>tbody{
@@ -43,35 +44,35 @@ if(pageNum==null){
 		<input type="hidden" name="bref" value="<%=vo.getBref()%>">   <!-- 현재 보고 있는 글의 ref를 입력 -->
 		<input type="hidden" name="bre_step" value="<%=vo.getBre_step()%>">   <!-- 현재 보고 있는 글의 re_step를 입력 -->
 		<input type="hidden" name="bre_level" value="<%=vo.getBre_level()%>">   <!-- 현재 보고 있는 글의 re_level를 입력 -->
-		<table border="1">
-			<tr>
+		<table border="1" class="table table-hover">
+			<!-- <tr>
 				<td colspan="2"><a href="wList.jsp">글목록</a></td>
-			</tr>
+			</tr> -->
 			<tr>
-				<td>작성자ID</td>
+				<td class="active">작성자ID</td>
 				<td><%= vo.getBwriter() %></td>
 			</tr>
 			<tr>
-				<td>제목</td>
+				<td class="active">제목</td>
 				<td><%= vo.getBsubject() %></td>
 			</tr>
 			<tr>
-				<td>내용</td>
+				<td class="active">내용</td>
 				<td><%= vo.getBcontent() %></td>
 			</tr>
 			<tr>
-				<td>파일선택</td>
+				<td class="active">파일선택</td>
 				<td><%= vo.getBfilepath() %></td>
 			</tr>
 			<tr>
-				<td>비밀번호</td>
+				<td class="active">비밀번호</td>
 				<td><%= vo.getBpwd() %></td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<input type="submit" value="답글작성">
-					<input type="button" value="삭제">
-					<input type="button" value="글목록" onclick="window.location='wList.jsp?pageNum=<%=pageNum%>'">
+					<input type="submit" class="btn btn-success" value="답글작성">
+					<input type="button" class="btn btn-warning" value="삭제">
+					<input type="button" class="btn btn-primary" value="글목록" onclick="window.location='wList.jsp?pageNum=<%=pageNum%>'">
 				</td>
 			</tr>
 		</table>

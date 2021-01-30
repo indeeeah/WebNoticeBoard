@@ -26,21 +26,21 @@ background-color:beige;
 }
 div{
 margin-left:20px;
+margin-right:20px;
 margin-top:20px;
 }
 table>tbody{
 background-color:white;
 text-align:center;
+
 }
 </style>
 </head>
 <body>
 	<div>
-		<table border="1">
-			<tr>
-				<td colspan="5"><a href="wWrite.jsp">글쓰기</a></td>
-			</tr>
-			<tr>
+	<button type="button" onclick="location.href='wWrite.jsp';" class="btn btn-success" style="margin-bottom:20px;">글쓰기</button>
+		<table border="1" class="table table-hover">
+			<tr class="active">
 				<td>글번호</td>
 				<td>ref</td>
 				<td>re_step</td>

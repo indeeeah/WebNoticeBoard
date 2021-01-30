@@ -12,10 +12,13 @@ background-color:beige;
 }
 div{
 margin-left:20px;
+margin-right:20px;
 margin-top:20px;
 }
 table>tbody{
 background-color:white;
+text-align:center;
+
 }
 </style>
 <script type="text/javascript">
@@ -37,29 +40,29 @@ background-color:white;
 %>
 <div>
 	<p>글쓰기</p>
-	<form enctype="multipart/form-data"	method="post" action="/wboard/boardInsert"	onsubmit="return writefrm_submit();">
-		<input type="text" name="bno" value="<%=bno%>">   <!-- 0은 새글, 그외 댓글인 경우는 읽고 있던 글의 bno를 넣어주기로 함. -->
-		<input type="text" name="bref" value="<%=bref%>">
-		<input type="text" name="bre_step" value="<%=bre_step%>">
-		<input type="text" name="bre_level" value="<%=bre_level%>">
-		<table border="1">
+	<form enctype="multipart/form-data"	method="post" action="/board/boardInsert"	onsubmit="return writefrm_submit();">
+		<input type="hidden" name="bno" value="<%=bno%>">   <!-- 0은 새글, 그외 댓글인 경우는 읽고 있던 글의 bno를 넣어주기로 함. -->
+		<input type="hidden" name="bref" value="<%=bref%>">
+		<input type="hidden" name="bre_step" value="<%=bre_step%>">
+		<input type="hidden" name="bre_level" value="<%=bre_level%>">
+		<table border="1" class="table table-hover">
+			<!-- <tr class="active">
+				<td colspan="2"><a href="/board/boardList">글목록</a></td>
+			</tr> -->
 			<tr>
-				<td colspan="2"><a href="/wboard/boardList">글목록</a></td>
+				<td class="active">작성자ID</td>
+				<td><input type="text" class="form-control" name="bwriter" id="bwriter"></td>
 			</tr>
 			<tr>
-				<td>작성자ID</td>
-				<td><input type="text" name="bwriter" id="bwriter"></td>
+				<td class="active">제목</td> 
+				<td><input type="text" class="form-control" name ="bsubject" id="bsubject"></td>
 			</tr>
 			<tr>
-				<td>제목</td>
-				<td><input type="text" name ="bsubject" id="bsubject"></td>
+				<td class="active">내용</td>
+				<td><input type="text" class="form-control" name ="bcontent" id="bcontent"></td>
 			</tr>
 			<tr>
-				<td>내용</td>
-				<td><input type="text" name ="bcontent" id="bcontent"></td>
-			</tr>
-			<tr>
-				<td>파일선택</td>
+				<td class="active">파일선택</td>
 				<td><input type="file" name ="bfilepath" id="bfilepath"></td>
 			</tr>
 			<!-- <tr>
@@ -67,14 +70,14 @@ background-color:white;
 				<td><input type="file" name ="bfilepath" id="bfilepaths" multiple="multiple"></td>
 			</tr> -->
 			<tr>
-				<td>비밀번호</td>
-				<td><input type="password" name ="bpwd"></td>
+				<td class="active">비밀번호</td>
+				<td><input type="password" class="form-control" name ="bpwd"></td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<input type="submit" value="글등록">
-					<input type="reset" value="다시작성">
-					<input type="button" value="글목록" onclick="window.location='/wboard/boardList'">
+					<input type="submit" class="btn btn-success" value="글등록">
+					<input type="reset" class="btn btn-warning" value="다시작성">
+					<input type="button" class="btn btn-primary" value="글목록" onclick="window.location='/wboard/boardList'">
 				</td>
 			</tr>
 		</table>
